@@ -14,7 +14,9 @@
     "dev": "concurrently \"npm:dev:web\" \"npm:dev:api\"",
     "dev:web": "npm --workspace apps/web run dev",
     "dev:api": "npm --workspace apps/api run dev",
-    "build": "npm --workspace apps/web run build && npm --workspace apps/api run build",
+    "build": "npm --workspace apps/web run build",
+    "build:api": "npm --workspace apps/api run build",
+    "build:all": "npm --workspace apps/web run build && npm --workspace apps/api run build",
     "install:all": "npm install && npx playwright install chromium"
   },
   "devDependencies": {
