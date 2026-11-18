@@ -1,0 +1,28 @@
+{
+  "name": "sitesculpt",
+  "version": "1.0.0",
+  "description": "Website Design Extractor & Reverse Engineering Tool",
+  "private": true,
+  "author": "Nandini GV",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nandini-gv/SiteSculpt.git"
+  },
+  "workspaces": ["apps/web", "apps/api"],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:api": "npm --workspace apps/api run dev",
+    "build": "npm --workspace apps/web run build && npm --workspace apps/api run build",
+    "install:all": "npm install && npx playwright install chromium"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

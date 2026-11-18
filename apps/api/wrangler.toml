@@ -1,0 +1,19 @@
+name = "sitesculpt-api"
+main = "src/server.ts"
+compatibility_date = "2024-11-18"
+
+[build]
+command = "npm run build"
+
+[build.upload]
+format = "modules"
+dir = "dist"
+main = "./server.js"
+
+# Environment variables
+[vars]
+PORT = "8787"
+NODE_ENV = "production"
+
+# Uncomment if you need to configure CORS origins
+# ALLOWED_ORIGINS = "https://sitesculpt.pages.dev,https://your-custom-domain.com"

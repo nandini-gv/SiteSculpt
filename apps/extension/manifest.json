@@ -1,0 +1,10 @@
+{
+ "manifest_version":3,
+ "name":"WebExtract Section Picker",
+ "version":"0.1.0",
+ "description":"Select a webpage section and send its markup and styles to WebExtract.",
+ "permissions":["activeTab","scripting"],
+ "host_permissions":["http://localhost:8787/*"],
+ "action":{"default_title":"Select a section","default_popup":"popup.html"},
+ "content_scripts":[{"matches":["http://*/*","https://*/*"],"js":["content.js"],"css":["content.css"],"run_at":"document_idle"}]
+}
